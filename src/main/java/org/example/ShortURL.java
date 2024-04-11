@@ -88,13 +88,11 @@ public class ShortURL {
                 printLine("Write short URL: ");
 
                 String short_url = readLine();
-
+                if (tt.isURL(short_url)) {
                     short_url = short_url.substring(5);
                     String long_url = tt.expandURL(short_url);
-                    if (!long_url.equals("")){
-                        printLine(long_url);
+                    printLine(long_url);
                 }
-
                 else{
                     printLine("It's not URL. Choose 1, 2 or 3.");
                 }
@@ -121,6 +119,5 @@ public class ShortURL {
     }
     private static void printLine(String s){
         System.out.println(s);
-        return;
     }
 }
